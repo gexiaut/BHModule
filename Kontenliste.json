@@ -1,0 +1,21 @@
+{
+  "Konten": [
+    {
+      "id": "12345",
+      "links": {"self": "https://www.google.com"},
+      "name": "beast",
+      "type": "Device"
+    }
+  ],
+  "links": {
+    "self": "https://www.google.com"
+  },
+
+
+  "paging": {
+    "count": 1,
+    "limit": 1,
+    "offset": 0,
+    "pages": 1
+  }
+}

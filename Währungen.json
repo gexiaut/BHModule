@@ -1,0 +1,38 @@
+{
+    "EUR": {
+        "USD": {
+            "Kaufen": 1.1466,
+            "Kaufen1": 1.1456,
+            "Verkaufen": 1.1366,
+            "Verkaufen1": 1.1266
+        },
+        "SEK": {
+            "Kaufen": 9.3112,
+            "Kaufen1": 9.3115,
+            "Verkaufen1": 9.3117,
+            "Verkaufen": 9.3112
+        },
+        "NOK": {
+            "Kaufen": 1.1466,
+            "Verkaufen": 1.1366
+        },
+        "DKK": {
+            "Kaufen": 1.1466,
+            "Verkaufen": 1.1366
+        },
+        "GBP": {
+            "Kaufen": 1.4910,
+            "Kaufen1": 1.4917,
+            "Verkaufen1": 1.4722,
+            "Verkaufen": 1.4742
+        }
+    },
+    "USD": {
+        "EUR": {
+            "1000": "850"
+        },
+        "SEK": {
+            "850": "1000"
+        }
+    }
+}
