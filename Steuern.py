@@ -1,50 +1,51 @@
 class Steuern():
+    #Steuersätze
 
     def getafter20(beforetax):
         tax = beforetax/5
         aftertax = beforetax + tax
-        print("Amount after tax:", aftertax)
-        print("The tax at 20%:", tax)
+        #print("Amount after tax:", aftertax)
+        #print("The tax at 20%:", tax)
 
         return aftertax
 
     def getbefore20(aftertax):
         tax = aftertax/6
         beforetax = aftertax - tax
-        print("Amount before tax:", beforetax)
-        print("The tax at 20%:", tax)
+        #print("Amount before tax:", beforetax)
+        #print("The tax at 20%:", tax)
 
         return beforetax
 
     def getafter10(beforetax):
         tax = beforetax * 0.1
         aftertax = beforetax + tax
-        print("Amount after tax:", aftertax)
-        print("The tax at 10%:", tax)
+        #print("Amount after tax:", aftertax)
+        #print("The tax at 10%:", tax)
 
         return aftertax
 
     def getbefore10(aftertax):
         tax = aftertax * 10/110
         beforetax = aftertax - tax
-        print("Amount before tax:", beforetax)
-        print("The tax at 20%:", tax)
+        #print("Amount before tax:", beforetax)
+        #print("The tax at 20%:", tax)
 
         return beforetax
 
     def getafterx(beforetax, x):
         tax = beforetax * x / 100
         aftertax = beforetax + tax
-        print("Amount after tax:", aftertax)
-        print("The tax", x,"% is:", tax)
+        #print("Amount after tax:", aftertax)
+        #print("The tax", x,"% is:", tax)
 
         return aftertax
 
     def getbeforex(aftertax, x):
         tax = aftertax * x / (100 + x)
         beforetax = aftertax - tax
-        print("Amount before tax:", beforetax)
-        print("The tax", x,"% is:", tax)
+        #print("Amount before tax:", beforetax)
+        #print("The tax", x,"% is:", tax)
 
         return beforetax
 
