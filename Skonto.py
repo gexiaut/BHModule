@@ -2,7 +2,7 @@ from Steuern import Steuern
 
 class Skonto():
 
-    #Bsp: Skonto.opwz(16200, 0.02)
+
     def Praktikermethodeeinkauf(brutto, Skontoprozent):
 
         Vorsteuer = Steuern.getbefore20(brutto)
@@ -18,19 +18,19 @@ class Skonto():
         return skonto
 
     def opwz(brutto, skontoprozent):
-        Vorsteuer = Steuern.getbefore20(brutto)
-        naskonto = brutto * (skontoprozent - Steuern.getbefore20(skontoprozent))
-        print("Die Zahlung lautet 5HW Verbrauch ", brutto - Vorsteuer - naskonto, "an 3LVB ", brutto)
-        print("                   8naSko        ", naskonto)
-        print("                   2Vst          ", Vorsteuer)
+        Netto = Steuern.getbefore20(brutto)
+        Rabattmitvst = brutto * skontoprozent
+        bank = brutto - Rabattmitvst
+        Skonto = Steuern.getbefore20(Rabattmitvst)
+        Vst = Rabattmitvst - Skonto
 
-        bank = brutto - naskonto - naskonto/5
+        print("3 LVB", brutto, "    2 Bank:", bank)
+        print("                     0 Maschinen        ", Skonto)
+        print("                     2 Vst          ", Vst, '\n')
 
-        print("Der Buchungsssatz lautet 3 LVB", brutto, " an 2Bank:", bank, "5Skonto", naskonto, "Vst:", naskonto/5)
-
-        return naskonto
+        return Skonto
     #naskonto = nicht abgezogener Skonto
     #python Sk
 
 
-Skonto.opwz(16200, 0.02)
+    #Beispiel: Skonto.opwz(16200, 0.02)

@@ -25,6 +25,12 @@
             "Kaufen1": 1.4917,
             "Verkaufen1": 1.4722,
             "Verkaufen": 1.4742
+        },
+        "SFR": {
+            "Kaufen": 1.60780,
+            "Kaufen1": 1.59380,
+            "Verkaufen1": 1.60789,
+            "Verkaufen": 1.59389
         }
     },
     "USD": {
