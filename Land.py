@@ -1,75 +1,75 @@
 class Land():
 
-    def getdnmoney(Land):
+    def getdnmoney(self, Land):
         if Land == 30 or Land == 'GR':
             Tagsatz = 28.6
             Nachtsatz = 23.3
-            print("GR", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("GR", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 31 or Land == 'NL':
             Tagsatz = 35.3
             Nachtsatz = 27.9
-            print("NL", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("NL", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 32 or Land == 'BE':
             Tagsatz = 35.3
             Nachtsatz = 22.7
-            print("BE", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("BE", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 33 or Land == 'FR':
             Tagsatz = 35.8
             Nachtsatz = 32.7
-            print("FR", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("FR", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 34 or Land == 'ES':
             Tagsatz = 34.2
             Nachtsatz = 30.5
-            print("ES", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("ES", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 36 or Land == 'HU':
             Tagsatz = 31
             Nachtsatz = 26.6
-            print("HU", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("HU", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 39 or Land == 'IT':
             Tagsatz = 35.8
             Nachtsatz = 27.9
-            print("IT", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("IT", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 40 or Land == 'RO':
             Tagsatz = 36.8
             Nachtsatz = 27.3
-            print("RO", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("RO", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 41 or Land == 'CH':
             Tagsatz = 27.4
             Nachtsatz = 15.9
-            print("CH", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("CH", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 43 or Land == 'AT':
             Tagsatz = 26.4
             Nachtsatz = 15
-            print("AT", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("AT", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 44 or Land == 'UK':
             Tagsatz = 41.4
             Nachtsatz = 41, 4
-            print("UK", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("UK", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 45 or Land == 'DK':
             Tagsatz = 41.4
             Nachtsatz = 41.4
-            print("DK", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("DK", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 46 or Land == 'SE':
             Tagsatz = 42.9
             Nachtsatz = 41.4
-            print("SE", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("SE", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
         if Land == 47 or Land == 'NO':
             Tagsatz = 32.7
             Nachtsatz = 25
-            print("NO", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz)
+            print("NO", 'Tagsatz:', Tagsatz, 'Nachtsatz:', Nachtsatz, '\n') 
 
 
 

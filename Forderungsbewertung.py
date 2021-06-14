@@ -4,90 +4,55 @@ from Steuern import Steuern
 class Forderungsbewertung():
 
 
-    def EWB(Forderung, EQuote, Quote):
+    def EWB(self, Forderung, EQuote, Quote, vquote):
 
-        C = Forderung * EQuote
-        M = 1-Quote
-        K = Forderung * M
-        Netto = Steuern.getbefore20(K)
+        Forderungnetto = Steuern.getbefore20(Forderung)
+        Zuweisung = Forderungnetto * (1-EQuote)
+        Abschreibung = Forderung * (1-Quote)
+        Netto = Steuern.getbefore20(Abschreibung)
 
+        Abschreibungv = Forderung * vquote
+        Nettov = Steuern.getbefore20(Abschreibungv)
 
-        print("7 Zuweisung EWB FD ", C, "                   2 EWB FD ", C)
+        print(Forderungnetto, Zuweisung, Abschreibung, '\n')
 
-        print("7 Zuweisung EWB FD ", Netto, "                   2 EWB FD ", K)
-        print("3 USt ", K - Netto)
+        if EQuote is not 0:
+            print("7 Zuweisung EWB FD ", Zuweisung, "                   2 EWB FD ", Zuweisung, '\n')
 
-
-
-        if Quote <= EQuote:
-            print("2 EWB FD", C, "               7 Zuweisung EWB FD      ", C)
-
-        if Quote > EQuote:
-            E = C - Netto
-            print("2 EWB FD", C, "                 7 Zuweisung EWB FD      ", Netto)
-            print("                                 4 Erträge Auflösung      ", E)
-
-        # Beispiel testen Forderungsbewertung.Bew(6480, 0.45  , 0.45)
-
-    def PWB(Forderung, EQuote, Quote):
-
-        C = Forderung * EQuote
-        M = 1-Quote
-        K = Forderung * M
-        Netto = Steuern.getbefore20(K)
-
-
-        print("7 Zuweisung EWB FD ", C, "                   2 EWB FD ", C)
-
-        print("7 Zuweisung EWB FD ", Netto, "                   2 EWB FD ", K)
-        print("3 USt ", K - Netto)
-
-
-
-        if Quote <= EQuote:
-            print("2 EWB FD", C, "               7 Zuweisung EWB FD      ", C)
+        if Quote < EQuote:
+            print("7 Abschreibung FD ", Netto, "                   2 KFD ", Abschreibung)
+            print("3 USt ", Abschreibung - Netto)
+            print("2 EWB FD ", Zuweisung, "       7 Zuweisung EWB FD ", Zuweisung, '\n')
 
         if Quote > EQuote:
-            E = C - Netto
-            print("2 EWB FD", C, "                 7 Zuweisung EWB FD      ", Netto)
-            print("                                 4 Erträge Auflösung      ", E)
+            print("7 Abschreibung FD ", Netto, "                   2 KFD ", Abschreibung)
+            print("3 USt ", Abschreibung - Netto)
+            print("2 EWB FD", Zuweisung, "                 7 Zuweisung EWB FD      ", Netto)
+            print("                                 4 Erträge Auflösung      ", Zuweisung - Netto, '\n')
 
-        # Beispiel testen Forderungsbewertung.Bew(6480, 0.45  , 0.45)
+        if EQuote is not 0 and Quote == EQuote:
+            print("7 Abschreibung FD", Netto, "                 7 Zuweisung EWB FD      ", Abschreibung)
+            print("3 USt ", Abschreibung - Netto)
 
-Forderungsbewertung.Bew(6480, 0.45, 0.45)
+            print("2 EWB FD ", Zuweisung, "       7 Zuweisung EWB FD ", Zuweisung, '\n')
 
+        if EQuote == 0 and vquote == 0:
+            print("7 Abschreibung FD ", Netto, "                   2 KFD ", Abschreibung)
+            print("3 USt ", Abschreibung - Netto)
 
+        if vquote is not 0:
+            print("7 Abschreibung FD ", Nettov, "                   2 KFD ", Abschreibungv)
+            print("3 USt ", Abschreibungv - Nettov)
 
+    def PWB(self, Forderung, EQuote, Quote):
 
-        # if AB > EB and KL == 1:
-        #     if ES is not 0:
-        #         V = ES
-        #         SEB = AB + ZK - V
-        #         S = SEB - EB
-        #         print("Sollendbestand", SEB, "IstEndbestand", EB, "Schadensfall", S)
-        #         print("Der Buchungssatz lautet 5HW Einsatz an 1HW", V)
-        #         print("                        5Schadensfall an 1HW", S)
-        #     else:
-        #         V = AB + ZK - EB
-        #         print("Der Verbrauch ist", V)
-        #         print("Der Buchungssatz lautet  5HW Einsatz an 1HW", V)
-        #
-        # elif AB > EB or AB < EB and KL == 5:
-        #     if ES is not 0:
-        #         V = ES
-        #         SEB = AB + ZK - V
-        #         S = SEB - EB
-        #         print("Sollendbestand", SEB, "IstEndbestand", EB, "Schadensfall", S)
-        #         D = V - ZK
-        #         if D < 0:
-        #             D = D * -1
-        #         print("Der Buchungssatz lautet 1HW an 5HW Einsatz", D)
-        #         print("                        5Schadensfall an 1HW", S)
-        #     else:
-        #         V = AB + ZK - EB
-        #         print("Der Verbrauch ist", V)
-        #         D = V - ZK
-        #         print("Der Buchungssatz lautet  5HW Einsatz an 1HW", D)
+        pass
+
+# Forderungsbewertung.EWB(1, 6480, 0.45, 0.45, 0)
+# Forderungsbewertung.EWB(1, 5200, 0, 0, 0)
+Forderungsbewertung.EWB(1, 10200, 0, 0, 0.3)
+
+# PWB fehlt
 
 
 

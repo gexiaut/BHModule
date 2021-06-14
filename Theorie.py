@@ -58,14 +58,14 @@ class Theorie():
         x6 = input()
         if x6 == 'Personalaufwand':
             print('stimmt')
+        x7 = input()
+        if x7 == 'Abschreibungen, Aufwand':
+            print('stimmt')
         x8 = input()
-        if x8 == 'Abschreibungen, Aufwand':
+        if x8 == 'Finanzerträge/aufwände':
             print('stimmt')
         x9 = input()
-        if x9 == 'Finanzerträge/aufwände':
-            print('stimmt')
-        x10 = input()
-        if x10 == 'Kapitalkonten, Rücklagen, Abschlusskonten':
+        if x9 == 'Kapitalkonten, Rücklagen, Abschlusskonten':
             print('stimmt')
 
 

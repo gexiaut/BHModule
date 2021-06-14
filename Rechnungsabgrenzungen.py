@@ -20,7 +20,7 @@ class Rechnungsabgrenzung():
     # ggf UST rausrechnen
 
 
-    def ARA(Brutto, wann, was, RA):
+    def ARA(self, Brutto, wann, was, RA):
 
 
         if RA == 'ARA':
@@ -35,7 +35,7 @@ class Rechnungsabgrenzung():
             if was == 'Zinserträge':
                 print("2 SFD ", SFD, "                   8 Zinserträge", SFD)
 
-    def PRA(Brutto, wann, was, RA):
+    def PRA(self, Brutto, wann, was, RA):
 
 
         if RA == 'PRA':
@@ -60,6 +60,6 @@ class Rechnungsabgrenzung():
 
 # Beispiel testen Rechnungsabgrenzung.ARA(6000 , 8, 'Versicherung', 'ARA')
 
-
+Rechnungsabgrenzung.ARA(1, 6000 , 8, 'Versicherung', 'ARA')
 
 

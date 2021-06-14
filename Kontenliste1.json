@@ -1,7 +1,8 @@
+
+
+
 {
-    "": "",
-    "1": "2",
-    "2000": "Bank",
+    "Bank" : "2000 Bank",
     "2500": "Vorsteuer",
     "2510": "VStigE20",
     "2515": "VStigE10",
@@ -14,13 +15,13 @@
     "4030": "Exporterloese0",
     "4040": "igL",
     "4400": "Erloesberichtigung20",
-    "4410": "Erlösberichtigung10",
+    "4410": "Erloesberichtigung10",
     "4440": "Skontoaufwand10",
     "4441": "Skontoaufwand20",
     "4444": "SkontoaufwandigL",
     "4820": "Eigenverbrauch20",
-    "4830": "Mieterträge20",
-    "4831": "Mieterträge10",
+    "4830": "Mietertraege20",
+    "4831": "Mietertraege10",
     "630": "PKW",
     "640": "LKW"
 }
