@@ -4,34 +4,29 @@ from Steuern import Steuern
 class Rückstellungen():
 
 
-    def RnB(Kostenexkl, Verlustexkl, Ausgang):
-
-
+    def RnB(self, Kostenexkl, Verlustexkl, Ausgang):
         print("7 R+B", Kostenexkl, "                     3 sonstige Rückstellung ", Kostenexkl, '\n')
-
 
         if Ausgang == 'verloren':
 
-            print("7 R+B", Verlustexkl, "                     3 LVB ", Steuern.getafter20(Verlustexkl))
-            print("2 VSt",  Steuern.getafter20(Verlustexkl) - Verlustexkl, '\n')
-
-
-            if Kostenexkl <= Verlustexkl:
+            if Kostenexkl < Steuern.getbefore20(Verlustexkl):
+                print("7 R+B", Steuern.getbefore20(Verlustexkl), "                     3 LVB ", Verlustexkl)
+                print("2 VSt", Verlustexkl - Steuern.getbefore20(Verlustexkl), '\n')
                 print("3 sonstige Rückstellung ", Kostenexkl, "  7 R+B", Kostenexkl,)
 
-            if Kostenexkl > Verlustexkl:
+            if Kostenexkl > Steuern.getbefore20(Verlustexkl):
                 #Erträge aus der Auflösung
-                Erträge = Kostenexkl - Verlustexkl
-                print("3 sonstige Rückstellung ", Kostenexkl, "  7 R+B", Kostenexkl, )
+                Erträge = Kostenexkl - Steuern.getbefore20(Verlustexkl)
+                print("7 R+B", Steuern.getbefore20(Verlustexkl), "                     3 LVB ", Verlustexkl)
+                print("2 VSt", Verlustexkl - Steuern.getbefore20(Verlustexkl), '\n')
+
+                print("3 sonstige Rückstellung ", Kostenexkl, "  7 R+B", Steuern.getbefore20(Verlustexkl), )
                 print("                        4 Erträge aus der Auflösung", Erträge )
 
         if Ausgang == 'gewonnen':
             print("3 sonstige Rückstellung ", Kostenexkl, "  4 Erträge aus der Auflösung", Kostenexkl)
 
+# Rückstellungen.RnB(1, 3500, 3840,'gewonnen')
+# Rückstellungen.RnB(1, 3500, 3840,'verloren')
 
-
-# Beispiel testen
-
-
-Rückstellungen.RnB(3500, 0,0)
-
+# mehr beispiele

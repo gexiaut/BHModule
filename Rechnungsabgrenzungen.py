@@ -20,8 +20,9 @@ class Rechnungsabgrenzung():
     # ggf UST rausrechnen
 
 
-    def ARA(Brutto, wann, was, RA):
+    def ARA(self, Brutto, wann, was, RA):
 
+        # was nicht mehr im Jahr ist
 
         if RA == 'ARA':
             ARA = wann / 12 * Brutto
@@ -30,12 +31,16 @@ class Rechnungsabgrenzung():
             if was == 'Mietaufwand':
                 print("2 ARA ", ARA, "                   7 Mietaufwand ", ARA)
 
+        # was noch in dem Jahr liegt
+
         if RA == 'SFD':
             SFD = wann / 12 * Brutto
             if was == 'Zinserträge':
                 print("2 SFD ", SFD, "                   8 Zinserträge", SFD)
+            if was == 'Miete':
+                print("2 SFD ", SFD, "                   4 Mieterträge", SFD)
 
-    def PRA(Brutto, wann, was, RA):
+    def PRA(self, Brutto, wann, was, RA):
 
 
         if RA == 'PRA':
@@ -43,13 +48,17 @@ class Rechnungsabgrenzung():
             if was == 'Mieterträge':
                 print("4 Mieterträge", PRA, "                   3 PRA ", PRA)
             if was == 'Zinserträge':
-                print("8 Zinserträge ", PRA , "                   3 PRA", PRA)
+                print("8 Zinserträge ", PRA, "                   3 PRA", PRA)
 
 
         if RA == 'SVB':
             SVB = wann / 12 * Brutto
+            if was == 'Instandhaltung':
+                print("7 Instandhaltung  ", SVB, "                   3 SVB", SVB)
+            if was == 'Versicherung':
+                print("7 Versicherung  ", SVB, "                   3 SVB", SVB)
             if was == 'Miete':
-                print("7 Miete  ", SVB, "                   3 SVB", SVB)
+                print("7 Mieteaufwand  ", SVB, "                   3 SVB", SVB)
             if was == 'Zinsaufwand':
                 print(" 8 Zinsaufwand  ", SVB, "                   3 SVB", SVB)
             if was == 'Transporte':
@@ -60,6 +69,7 @@ class Rechnungsabgrenzung():
 
 # Beispiel testen Rechnungsabgrenzung.ARA(6000 , 8, 'Versicherung', 'ARA')
 
+# Rechnungsabgrenzung.ARA(1, 2160 , 10, 'Miete', 'SFD')
 
-
+Rechnungsabgrenzung.PRA(1, 2640 , 10, 'Miete', 'SVB')
 

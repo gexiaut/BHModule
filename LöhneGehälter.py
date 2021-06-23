@@ -2,14 +2,12 @@
 
 class LöhneGehälter():
 
-    def Vorschüsse(Vorschüsse):
+    def Vorschüsse(self, Vorschüsse):
 
 
         Vorschüsse = 9750
 
         # BK  Vorschüsse
-        print("2 Vorschüsse", Vorschüsse, "         2 Bank ", Vorschüsse, '\n')
-
         SummeGehälter = 10500
         SummeLöhne = 30000
         Brutto = SummeGehälter + SummeLöhne
@@ -17,15 +15,15 @@ class LöhneGehälter():
         Lohnsteuer = 6525
         Gesamtnettobetrag = Brutto - SVDN - Lohnsteuer
         VBMA = Gesamtnettobetrag - Vorschüsse
-        DB=1485
-        DZ=132
-        Kommunalsteuer=990
+        DB = 1485
+        DZ = 132
+        Kommunalsteuer = 990
         SVDGA = 8471.25
         BMVK = 344.25
         VBGKK = SVDN + SVDGA + BMVK
         VBFA = 12300 + DZ + DB + Lohnsteuer
 
-
+        print("2 Vorschüsse", Vorschüsse, "         2 Bank ", Vorschüsse, '\n')
         # BU
         print("6 Gehälter", SummeGehälter, "          3 VB GKK ", SVDN)
         print("6 Löhne", SummeLöhne, "             3 VB FA ", Lohnsteuer)

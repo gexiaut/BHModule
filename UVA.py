@@ -22,7 +22,7 @@ class UVA():
     Mieterträge20 = 0
     Mieterträge10 = 0
 
-    def Saldenerlöse(ErhalteneAnzahlung20,  Umsatzerlöse10, Umsatzerlöse20, Mieterträge10, igL, Eigenverbrauch10, Eigenverbrauch20, Exporterlöse0):
+    def Saldenerlöse(self, ErhalteneAnzahlung20,  Umsatzerlöse10, Umsatzerlöse20, Mieterträge10, igL, Eigenverbrauch10, Eigenverbrauch20, Exporterlöse0):
 
         if ErhalteneAnzahlung20 == 0 or None:
             ErhalteneAnzahlung20 = 0
@@ -44,7 +44,7 @@ class UVA():
         Gesamt = ErhalteneAnzahlung20 + Umsatzerlöse10 + Umsatzerlöse20 + Mieterträge10 + igL + Eigenverbrauch10 + Eigenverbrauch20 + Exporterlöse0
         return Gesamt
 
-    def Saldenaufwand(Skontoaufwand10, Skontoaufwand20, SkontoaufwandigL, SkontoaufwandExport, Erlösberichtigung10, Erlösberichtigung20):
+    def Saldenaufwand(self, Skontoaufwand10, Skontoaufwand20, SkontoaufwandigL, SkontoaufwandExport, Erlösberichtigung10, Erlösberichtigung20):
 
         if Skontoaufwand10 == 0 or None:
             Skontoaufwand10 = 0
@@ -63,7 +63,7 @@ class UVA():
         Gesamt = Skontoaufwand10 + Skontoaufwand20 + SkontoaufwandigL + SkontoaufwandExport + Erlösberichtigung10 + Erlösberichtigung20
         return Gesamt
 
-    def Saldensteuern(Vorsteuer, Umsatzsteuer,  EUStgeschuldet, USTigE10, USTigE20, VStiGE20, VStiGE10, USTErwerbsteuer20, VSTErwerbsteuer20):
+    def Saldensteuern(self, Vorsteuer, Umsatzsteuer,  EUStgeschuldet, USTigE10, USTigE20, VStiGE20, VStiGE10, USTErwerbsteuer20, VSTErwerbsteuer20):
 
         if Vorsteuer == 0 or None:
             Vorsteuer = 0
@@ -160,3 +160,4 @@ class UVA():
 #     Überschuss = Überschuss * -1
 #     print('6. Vorrauszahlung', Überschuss)
 
+# Kontennummern hinzufügen

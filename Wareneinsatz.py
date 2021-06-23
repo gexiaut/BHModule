@@ -1,4 +1,3 @@
-from Steuern import Steuern
 
 
 class Waren():
@@ -28,66 +27,46 @@ class Waren():
             print("5 HW-Einsatz ", Verbrauch, "                     1 HW ", Verbrauch)
 
         if Anfangsbestand > Endbestand and Klasse == 5:
-            print("5 HW-Einsatz ", Verbrauch, "                     1 HW ", Verbrauch)
+            print("5 HW-Einsatz ", Verbrauch - Zukauf, "                     1 HW ", Verbrauch - Zukauf)
 
-    def Materialliste(Anfangsbestand, Endbestand, Zukauf, Klasse, Verbrauch):
-
-        if Verbrauch == 0:
-            Verbrauch = Anfangsbestand + Zukauf - Endbestand
+        return Verbrauch
 
 
-        Sollendbestand = Anfangsbestand + Zukauf - Verbrauch
 
-        if Verbrauch is not 0:
-            Schadensfall = Sollendbestand - Endbestand
-            if Schadensfall is not 0 and Klasse == 1:
-                #print("5 HW-Einsatz ", Verbrauch, "                     1 HW ", Verbrauch)
-                print("5 Schadensfall ", Schadensfall, "                   1 HW ", Schadensfall)
+    def HWliste(MS, MH, HWS, HWH, MES,MEH,HWES,HWEH,SS,SH,Material,MEndbestand,HW,HEndbestand):
 
-            Diff = Zukauf - Verbrauch
-
-            if Schadensfall is not 0 and Klasse == 5 and Zukauf > Verbrauch:
-                print("1 HW ", Diff, "                     5 HW-Einsatz ", Diff)
-                print("5 Schadensfall ", Schadensfall, "                   1 HW ", Schadensfall)
-
-        if Anfangsbestand > Endbestand and Klasse == 1:
-            print("5 HW-Einsatz ", Verbrauch, "                     1 HW ", Verbrauch)
-
-        if Anfangsbestand > Endbestand and Klasse == 5:
-            print("5 HW-Einsatz ", Verbrauch, "                     1 HW ", Verbrauch)
-
-    def HWliste(Anfangsbestand, Endbestand, Zukauf, Klasse, Verbrauch):
-
-        if Verbrauch == 0:
-            Verbrauch = Anfangsbestand + Zukauf - Endbestand
+        print("                     SOLL        HABEN")
+        print("Material         ", MS, "        ", MH)
+        print("Handelswaren     ", HWS, "       ", HWH)
+        print("Materialeinsatz     ", MES, "          ", MEH)
+        print("Handelswareneinsatz  ", HWES, "     ",HWEH)
+        print("Schadensfälle        ", SS, "         ", SH, '\n')
 
 
-        Sollendbestand = Anfangsbestand + Zukauf - Verbrauch
+        print("                    Material  Verbrauch lt. Lagerbuchhaltung ", Material)
+        print("                                 Endbestand lt. Inventur  ", MEndbestand)
+        print("                     HW          Verbrauch lt. Lagerbuchhaltung ", HW)
+        print("                                 Endbestand lt. Inventur  ", HEndbestand, '\n')
 
-        if Verbrauch is not 0:
-            Schadensfall = Sollendbestand - Endbestand
-            if Schadensfall is not 0 and Klasse == 1:
-                #print("5 HW-Einsatz ", Verbrauch, "                     1 HW ", Verbrauch)
-                print("5 Schadensfall ", Schadensfall, "                   1 HW ", Schadensfall)
-
-            Diff = Zukauf - Verbrauch
-
-            if Schadensfall is not 0 and Klasse == 5 and Zukauf > Verbrauch:
-                print("1 HW ", Diff, "                     5 HW-Einsatz ", Diff)
-                print("5 Schadensfall ", Schadensfall, "                   1 HW ", Schadensfall)
-
-        if Anfangsbestand > Endbestand and Klasse == 1:
-            print("5 HW-Einsatz ", Verbrauch, "                     1 HW ", Verbrauch)
-
-        if Anfangsbestand > Endbestand and Klasse == 5:
-            print("5 HW-Einsatz ", Verbrauch, "                     1 HW ", Verbrauch)
+        SOLLEB = MS - Material
+        SS = SOLLEB - MEndbestand
 
 
+
+        print("5 Materialeinsatz ", Material, "                     1 Material ", Material)
+        print("5 Einsatz ", SS, "                            1 Material ", SS)
+
+
+
+
+
+
+# Waren.Einsatz(170680, 177180, 75000, 5, 68300)
+# Waren.HWliste(3670000, 0, 350000, 0, 0, 0, 935000, 0, 0, 0, 3400000, 265000, 905000, 375000)
 
 
 # Beispiel testen
-# Waren.Materialliste(3670000, 265000  , 0, 1, 3400000)
-Waren.HWliste(350000, 375000  , 935000, 5, 905000)
+
 
 
         # if AB > EB and KL == 1:
