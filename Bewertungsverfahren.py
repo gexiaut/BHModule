@@ -71,8 +71,60 @@ class Bewertungverfahren():
         print("              ", "5 Schadensfall   ", Schadensfallid, "  1 HW   ", Schadensfallid)
         print("              ", "5 Abschreibung   ", Abwertung, "  1 HW   ", Abwertung, '\n')
 
-    def FIFO(self, Menge, Preis, Endbestand, Zukaufm1, Zukaufp1, Zukaufm2, Zukaufp2, Klasse, Verbrauch1, Verbrauch2, Tagespreis):
-        pass
+    def FIFO(self, Menge, Preis, Endbestand, Zukaufm1, Zukaufp1, Zukaufm2, Zukaufp2, Klasse, Verbrauch1, Tagespreis):
+
+        Anfangsbestand = Menge * Preis
+        Zukauf1 = Zukaufm1 * Zukaufp1
+        Zukauf2 = Zukaufm2 * Zukaufp2
+        zwm = Menge + Zukaufm1 + Zukaufm2
+        zwg = Menge * Preis + Zukaufm1 * Zukaufp1 + Zukaufm2 * Zukaufp2
+
+        Sollendbestand = Anfangsbestand + Zukauf1 + Zukauf2 - Verbrauch1
+        Schadensfall = zwm - Zukaufm1 - Endbestand
+
+
+        print("Text                 Menge       Preis        Diff       GES")
+        print("Anfangsbestand     ", Menge, "     ", Preis, "           -        ", Anfangsbestand)
+        print("+ 1. Zukauf      ", Zukaufm1, "     ", Zukaufp1, "           -        ", Zukauf1)
+        print("+ 2. Zukauf      ", Zukaufm2, "     ", Zukaufp2, "           -        ", Zukauf2)
+
+
+        # print(zwm, zwg)
+
+        if Verbrauch1 > Menge + Zukaufm1 and Verbrauch1 < zwm :
+            zwischenmenge = Menge + Zukaufm1 + (zwm - Verbrauch1)
+            zwischengeld = Anfangsbestand + Zukauf1
+            gesgeld = zwischengeld + ((Menge + Zukaufm1 - Verbrauch1 + Zukaufm2) * Zukaufp2)
+
+        # print(zwischenmenge, zwischengeld, gesgeld)
+
+
+        Abfassung1 = gesgeld
+        SOLLEBid = zwg - Abfassung1
+        ISTEBid = Endbestand * Zukaufp2
+        Schadensfallid = (zwm - Verbrauch1 - Endbestand) * Zukaufp2
+
+        print("- Abfassungen      ", Verbrauch1, "     ", Abfassung1)
+        print("Soll-EB        ", zwm - Verbrauch1, "     ", "    ",
+              SOLLEBid)
+        print("-Ist-EB       ", Endbestand, "     ", "     ", ISTEBid)
+        print("Schadensfall ", zwm - Verbrauch1 - Endbestand, "     " , SOLLEBid - ISTEBid , '\n')
+
+        Abwertung = Endbestand * (Zukaufp2 - Tagespreis)
+        Bilanzansatz = ISTEBid - Abwertung
+        HWEinsatz = Abfassung1
+        Einsatz = 22000
+
+        print("Abwertung  ", Abwertung)
+        print("Bilanzansatz     ", "Abwertung  ", Bilanzansatz, '\n')
+
+        print("Zukauf in 1       ", "5 HW-Einsatz   ", HWEinsatz, "  1 HW   ", HWEinsatz)
+        print("              ", "5 Schadensfall   ", Schadensfallid, "  1 HW   ", Schadensfallid)
+        print("              ", "5 Abschreibung   ", Abwertung, "  1 HW   ", Abwertung, '\n')
+
+        print("Zukauf in 5       ", " 1 HW    ", Einsatz, "  5 HW-Einsatz   ", Einsatz)
+        print("              ", "5 Schadensfall   ", Schadensfallid, "  1 HW   ", Schadensfallid)
+        print("              ", "5 Abschreibung   ", Abwertung, "  1 HW   ", Abwertung, '\n')
 
     def glDurchschnitt(self, Menge, Preis, Endbestand, Zukaufm1, Zukaufp1, Zukaufm2, Zukaufp2, zkzp1, abzp1, zkzp2, abzp2,  Klasse, Verbrauch1, Verbrauch2, Tagespreis):
         Anfangsbestand = Menge * Preis
@@ -144,7 +196,9 @@ class Bewertungverfahren():
 # Bewertungverfahren.Identitäts(1, 1000, 20, 1200, 4000, 25, 3000, 28, 1, 500, 2500, 26)
 
 
-# Alles bis aufs erste fehlt
+# Bewertungverfahren.FIFO(1, 1000, 20, 1200, 4000, 25, 3000, 28,  1, 6500, 26)
 
 
 # Bewertungverfahren.glDurchschnitt(1, 1000, 20, 1200, 4000, 25, 3000, 28, 110, 524, 620, 730, 1, 4000, 2500, 26)
+
+# gewD fehlt und Zukauf stimmt noch nicht

@@ -1,12 +1,8 @@
 from Kontenerstellung import Konto
 from Steuern import Steuern
 
-Accs = { "Bank":"2000 Bank",  }
 
 class Anzahlung(Konto):
-
-
-
 
 
     # def __init__(self, Anzbrutto,
@@ -122,6 +118,7 @@ class Anzahlung(Konto):
         print("3 LVB ", Rest, "an 2 Bank", Rest, '\n')
 
         # Beispiel: Anzahlung.Kauf(12486, 49944)
+
 
 
 

@@ -72,12 +72,9 @@ class Skonto(Konto):
         print("8 naLieferantenskonti", skonto)
         print("2 Vst", Gesamtbrutto - Netto, '\n')
 
-
         print("3 LVB", Gesamtbrutto, "      2 Bank:", bank)
         print("                             8 naLieferantenskonti", skonto)
         print("                             2 Vst", Vstges, '\n')
-
-
 
         LVB.einzahlen(Gesamtbrutto)
 
@@ -89,7 +86,6 @@ class Skonto(Konto):
         Bank.buchen(LVB, Netto - skonto)
         naLieferantenskonti.buchen(LVB, skonto)
         Vst.buchen(LVB, Vstges)
-
 
         return skonto
     # naskonto = nicht abgezogener Skonto

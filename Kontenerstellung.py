@@ -63,6 +63,7 @@ class Konto():
     def alles(self):
         return self.__Kontonummer, self.__Kontostand, self.__Soll, self.__Haben
 
+
 with open('Kontenliste1.json') as data_file:
             Kontenliste = json.load(data_file)
 
